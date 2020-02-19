@@ -1,0 +1,33 @@
+{
+  "name": "xteamemailapi",
+  "version": "0.0.1",
+  "description": "This lambda function will be scheduled to run every 2 minutes and will pull new Media items from Mediaportal database and push them into kinesis stream after adding information about companies and sydnication. When this operation is successful, the last processed Prospect Id will be pushed into the kinesis stream.",
+  "main": "index.js",
+  "author": "akhil biswas",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.5.2",
+    "aws-sdk": "^2.619.0",
+    "config": "^3.2.5",
+    "email-validator": "^2.0.4",
+    "json-update": "^5.3.0",
+    "mailgun-js": "^0.22.0",
+    "moment": "^2.24.0",
+    "q": "^1.5.1",
+    "underscore": "^1.9.2",
+    "underscore-node": "^0.1.2",
+    "serverless": "^1.63.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "lambda-local": "^1.7.1",
+    "mocha": "^7.0.1",
+    "rewire": "^4.0.1",
+    "serverless": "^1.63.0",
+    "serverless-domain-manager": "^3.3.1",
+    "serverless-pseudo-parameters": "^2.5.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  }
+}

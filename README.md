@@ -1,4 +1,5 @@
-# hoteliers-sendgrid-api-service lambda
+# lambda functions
+# hoteliers-sendgrid-api-service
 This Lambda gets triggered by sendgrid email send API
 
 # hoteliers-mailgun-api-service
@@ -6,6 +7,7 @@ This Lambda gets triggered by mailgun email send API
 
 # API endpoints:
   POST - https://luja970or2.execute-api.ap-southeast-2.amazonaws.com/dev/sendgrid
+
   POST - https://luja970or2.execute-api.ap-southeast-2.amazonaws.com/dev/mailgun
 
 # payload (body)
@@ -34,13 +36,13 @@ I used visual studio code for the development environment and  nodejs V10.15.3.
 I deployed the code in AWS. I have created two separate lambda functions and the lambdas are triggered by API which is configured in AWS API Gateway. I used Serverless framework  to automate the deployment.
 
 ### Style Guide
-Please follow the google styleguides for [javascript](https://google.github.io/styleguide/jsguide.html) and [html](https://google.github.io/styleguide/htmlcssguide.html)
+Followed the google styleguides for [javascript](https://google.github.io/styleguide/jsguide.html) and [html](https://google.github.io/styleguide/htmlcssguide.html)
 
 #### Indentation
-Please use two spaces for indentation instead of tabs in all javascript, css, html and json files. 
+Used two spaces for indentation instead of tabs in all javascript, css, html and json files. (vs code default indentation)
 
 #### File naming conventions
-Use lower case file names, with hyphens separating words.
+Used lower case file names, with hyphens separating words.
 For example:
 index.js, email-handler.js
 

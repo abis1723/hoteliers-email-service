@@ -1,7 +1,6 @@
 {
   "name": "xteamemailapi",
   "version": "0.0.1",
-  "description": "This lambda function will be scheduled to run every 2 minutes and will pull new Media items from Mediaportal database and push them into kinesis stream after adding information about companies and sydnication. When this operation is successful, the last processed Prospect Id will be pushed into the kinesis stream.",
   "main": "index.js",
   "author": "akhil biswas",
   "license": "ISC",

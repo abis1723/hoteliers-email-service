@@ -28,7 +28,7 @@ function Formater(stackName, moduleName, dateFormat) {
     }
 
     function formatLog(level, args) {
-        var message = formatMessage(args)
+        const message = formatMessage(args)
         return `${moment().format(dateFormat)} | ${stackName} | ${moduleName} | level=${level.levelName} | ${message}`
     }
 
@@ -43,28 +43,28 @@ class Logger {
     }
 
     debug(...args) {
-        var level = LEVEL.DEBUG
+        const level = LEVEL.DEBUG
         if(level.levelInt >= this.level.levelInt) {
             console.log(this.formater(level, args))
         }
     }
 
     info(...args) {
-        var level = LEVEL.INFO
+        const level = LEVEL.INFO
         if(level.levelInt >= this.level.levelInt) {
             console.info(this.formater(level, args))
         }
     }
 
     warn(...args) {
-        var level = LEVEL.WARN
+        const level = LEVEL.WARN
         if(level.levelInt >= this.level.levelInt) {
             console.warn(this.formater(level, args))
         }
     }
 
     error(...args) {
-        var level = LEVEL.ERROR
+        const level = LEVEL.ERROR
         if(level.levelInt >= this.level.levelInt) {
             console.error(this.formater(level, args))
         }

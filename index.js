@@ -5,50 +5,38 @@ let { emailHandleSendGrid, emailHandleMailGun } = require('./handler/email-handl
 let { logger } = require('./config/index')
 
 //function to call sendgrid email send service
-function emailhandlesendgrid(event, context, callback) {
-  var request = JSON.parse(event.body);
+function emailhandlesendgrid(event) {
+  const request = JSON.parse(event.body);
   const message = validRequest(request);
   if (message) {
-    emailHandleSendGrid(message).then(function (data) {
-      const response = {
-        "statusCode": 200,
-        "body": JSON.stringify(data)
-      };
-      callback(null, response);
-    }, function (err) {
-      logger.error(err);
-    }).catch(function (err) {
-      logger.error(err);
+    emailHandleSendGrid(message).then((data) => {
+      logger.info(data);
+    }).catch((data) => {
+      logger.error(data);
     });
   }
 }
 
 //function to call mailgun email send service
-function emailhandlemailgun(event, context, callback) {
-  var request = JSON.parse(event.body);
+function emailhandlemailgun(event) {
+  const request = JSON.parse(event.body);
   const message = validRequest(request);
   if (message) {
-    emailHandleMailGun(message).then(function (data) {
-      const response = {
-        "statusCode": 200,
-        "body": JSON.stringify(data)
-      };
-      callback(null, response);
-    }, function (err) {
-      logger.error(err);
-    }).catch(function (err) {
-      logger.error(err);
+    emailHandleMailGun(message).then((data) => {
+      logger.info(data);
+    }).catch((data) => {
+      logger.error(data);
     });
   }
 }
 
-exports.emailhandlesendgrid = function (event, context, callback) {
+exports.emailhandlesendgrid = function (event, context) {
   context.callbackWaitsForEmptyEventLoop = false;
-  emailhandlesendgrid(event, context, callback);
+  emailhandlesendgrid(event);
 };
-exports.emailhandlemailgun = function (event, context, callback) {
+exports.emailhandlemailgun = function (event, context) {
   context.callbackWaitsForEmptyEventLoop = false;
-  emailhandlemailgun(event, context, callback);
+  emailhandlemailgun(event);
 };
 
 

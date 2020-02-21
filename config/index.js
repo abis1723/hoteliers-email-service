@@ -1,10 +1,10 @@
 ﻿const logging = require("../logging/logging");
 
-var AWS = {
+const AWS = {
   awsRegion: "ap-southeast-2"
 };
 /* logger */
-var LOG_LOGGER = new logging.Logger(
+const LOG_LOGGER = new logging.Logger(
   process.env.DEBUG == 'true' ? logging.LEVEL.DEBUG : logging.LEVEL.INFO,
   logging.Formater('hoteliersemail', process.env.LOGGER_FLAG || 'hoteliers-email-api')
 )

@@ -13,7 +13,7 @@
     "mailgun-js": "^0.22.0",
     "moment": "^2.24.0",
     "q": "^1.5.1",
-    "underscore": "^1.9.2",
+    "underscore": "^1.12.1",
     "underscore-node": "^0.1.2",
     "serverless": "^1.63.0"
   },
